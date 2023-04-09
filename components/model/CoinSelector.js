@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import CoinItems from './CoinItems'
 
-const tempFromAddress = '0xB4EbD453D80A01A0dC7De077c61B1c9b336F05E3'
+const tempFromAddress = ''
 
 const CoinSelector = ({
     setAction,
