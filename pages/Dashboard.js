@@ -11,8 +11,8 @@ const sdk = new ThirdwebSDK(
     new ethers.Wallet(
         process.env.NEXT_PUBLIC_METAMASK_KEY,
         ethers.getDefaultProvider(
-            // 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
-             'https://goerli.infura.io/v3/9ca0316466a74346a02211ced1c6a604'
+            // 'https://rinkeby.infura.io/v3/'
+             'https://goerli.infura.io/v3/'
         )
     )
 )
@@ -25,7 +25,7 @@ function Dashboard({ address }) {
     useEffect(() => {
         const getSanityAndThirdWebToken = async () => {
 
-            const coins = await fetch("https://47vc099x.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%3D%3D'coins'%5D%20%7B%0A%20%20name%2C%0A%20%20usdPrice%2C%0A%20%20contractAddress%2C%0A%20%20symbol%2C%0A%20%20logo%0A%7D")
+            const coins = await fetch("put here sanity api url,that you can get from sanity database")
             const sanityToken = (await coins.json()).result
             setSanityTokens(sanityToken)
             setTwTokens(sanityToken.map(token => sdk.getTokenModule(token.contractAddress)))
